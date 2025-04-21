@@ -7,21 +7,22 @@ Simple nvim plugin to set colorschemes
 - [`lazy.nvim`](https://github.com/folke/lazy.nvim)
     ```lua
     return {
-        'nenikitov/colorscheme-loader.nvim',
-        dependencies = {
-            -- All your colorschemes along with their `setup` functions (if needed) go here
-            'akinsho/horizon.nvim'
+        {
+            'nenikitov/colorscheme-loader.nvim',
+            opts = {
+                -- Custom colorscheme to load
+                -- Or array for fallbacks
+                -- Optional if you want to apply a default colorscheme
+                custom = 'horizon',
+                -- Extra fallback from default NeoVim colorschemes
+                fallback = 'slate'
+            },
+            -- `init` is called before all other plugins, so no need to set `priority`
+            init = function(self)
+                require('colorscheme_loader').setup(self.opts)
+            end,
         },
-        -- !! Important !! Since all colorschemes are listed as dependencies
-        -- The priority of this plugin is propagated
-        priority = 1000,
-        opts = {
-            -- Custom colorscheme to load
-            -- Or array for fallbacks
-            -- Optional if you want to apply a default colorscheme
-            custom = 'horizon',
-            -- Extra fallback from default NeoVim colorschemes
-            fallback = 'slate'
-        }
+        -- All your colorscheme plugins, along with their `config` functions (if needed) go here
+        'akinsho/horizon.nvim',
     }
     ```
