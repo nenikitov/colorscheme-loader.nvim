@@ -16,7 +16,7 @@ Simple nvim plugin to set colorschemes
                 custom = 'horizon',
                 -- Extra fallback from default NeoVim colorschemes
                 fallback = 'slate',
-                -- Whether to ignore the notification is fallback was used
+                -- Whether to ignore the notification when fallback is used
                 silent = false,
             },
             -- `init` is called before all other plugins, so no need to set `priority`
