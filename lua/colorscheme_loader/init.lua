@@ -30,7 +30,7 @@ local M = {}
 ---@class Config
 ---@field custom string | string[] | nil Custom colorschemes in order that they should be tried to be applied
 ---@field fallback DefaultColorscheme Default colorscheme to fall back on
----@field silent boolean | nil Whether to ignore all logs
+---@field silent boolean | nil Whether to ignore the notification when fallback is used
 
 ---@type Config
 M.default_config = {
