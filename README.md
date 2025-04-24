@@ -15,7 +15,9 @@ Simple nvim plugin to set colorschemes
                 -- Optional if you want to apply a default colorscheme
                 custom = 'horizon',
                 -- Extra fallback from default NeoVim colorschemes
-                fallback = 'slate'
+                fallback = 'slate',
+                -- Whether to ignore the notification is fallback was used
+                silent = false,
             },
             -- `init` is called before all other plugins, so no need to set `priority`
             init = function(self)
