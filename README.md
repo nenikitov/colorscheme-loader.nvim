@@ -23,6 +23,8 @@ Simple nvim plugin to set colorschemes
             init = function(self)
                 require('colorscheme_loader').setup(self.opts)
             end,
+            -- `config` not needed, is configured in `init`
+            config = function() end,
         },
         -- All your colorscheme plugins, along with their `config` functions (if needed) go here
         'akinsho/horizon.nvim',
